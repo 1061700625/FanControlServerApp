@@ -1,12 +1,11 @@
 # FanControlServer
 
-飞牛私有云（fnOS）智能风扇与温度管理工具。
+飞牛私有云（fnOS）智能风扇与温度管理工具，支持X86和Arm。
 
 ## 界面预览
 
 <a href="./docs/images/screenshot1.png"><img src="./docs/images/screenshot1.png" width="500"></a>
 <a href="./docs/images/screenshot2.png"><img src="./docs/images/screenshot2.png" width="500"></a>
-<br>
 <a href="./docs/images/screenshot3.png"><img src="./docs/images/screenshot3.png" width="500"></a>
 <a href="./docs/images/screenshot4.png"><img src="./docs/images/screenshot4.png" width="500"></a>
 
@@ -103,46 +102,3 @@ FanControlServer-x86-iframe.fpk
 FanControlServer-arm-url.fpk
 FanControlServer-arm-iframe.fpk
 ```
-
-[//]: # (## 安装)
-
-[//]: # ()
-[//]: # (```bash)
-
-[//]: # (appcenter-cli install-fpk dist/FanControlServer.fpk)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (安装后通过飞牛系统菜单 `/app/FanControlServer` 访问，登录认证由统一网关统一处理。)
-
-## 目录结构
-
-```
-├── backend/          # Go 后端源码（go:embed 内嵌前端）
-├── frontend/         # 前端源码（Vite + TS + Tailwind）
-├── scripts/          # 构建脚本（build.sh / build.ps1）
-├── app/              # 飞牛应用目录（server/ 为编译产物，ui/ 为桌面入口）
-├── cmd/              # 飞牛生命周期脚本（启停、安装、卸载等）
-├── config/           # 飞牛权限 / 资源配置
-├── wizard/           # 飞牛安装 / 配置 / 卸载向导
-└── manifest          # 飞牛应用元数据
-```
-
-## Star History
-
-<a href="https://www.star-history.com/?repos=guan-ry%2FFanControlServerApp&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=guan-ry/FanControlServerApp&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=guan-ry/FanControlServerApp&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=guan-ry/FanControlServerApp&type=date&legend=top-left" />
- </picture>
-</a>
-
-## 支持项目
-
-如果你觉得这个项目有用，欢迎请作者喝杯咖啡 ☕️
-
-<a href="./docs/images/donate-qrcode.png">
-    <img src="./docs/images/donate-qrcode.png" width="360" alt="打赏二维码" />
-</a>
