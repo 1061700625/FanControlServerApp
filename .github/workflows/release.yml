@@ -19,10 +19,8 @@ jobs:
         include:
           - arch: amd64
             goarch: amd64
-            fnpack_url: fnpack-1.2.1-linux-amd64
           - arch: arm64
             goarch: arm64
-            fnpack_url: fnpack-1.2.1-linux-arm64
         ui: [url, iframe]
 
     steps:
@@ -64,14 +62,14 @@ jobs:
           go mod tidy
           GOOS=linux GOARCH=${{ matrix.goarch }} CGO_ENABLED=0             go build -trimpath -ldflags '-s -w'             -o ../app/server/fancontrolserver .
 
-      - name: Install fnpack (${{ matrix.arch }})
+      - name: Install fnpack (amd64)
         run: |
-          curl -L -o fnpack "https://static2.fnnas.com/fnpack/${{ matrix.fnpack_url }}"
+          curl -L -o fnpack "https://static2.fnnas.com/fnpack/fnpack-1.2.1-linux-amd64"
           chmod +x fnpack
           sudo mv fnpack /usr/local/bin/fnpack
           fnpack --help
 
-      - name: Get version from tag
+      - name: Get version
         id: get_version
         run: |
           if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
